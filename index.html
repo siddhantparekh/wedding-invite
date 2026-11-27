@@ -82,6 +82,21 @@ body{
 .names span{font-size:.55em; color:var(--gold); padding:0 .1em}
 .date-line{font-family:'Cinzel',serif; font-size:12.5px; letter-spacing:.2em; color:var(--deep)}
 
+
+/* ---------- invitation ---------- */
+.invitation{background:radial-gradient(ellipse at 50% 40%, #FFF3D9 0%, var(--cream) 62%); padding-top:92px}
+.elder{font-family:'Cinzel',serif; font-weight:700; font-size:clamp(17px,4.9vw,21px); letter-spacing:.05em; color:var(--deep); margin-top:6px}
+.elder.late{color:#6B3A26; margin-top:2px}
+.memory{display:flex; align-items:center; justify-content:center; gap:8px; font-style:italic; font-size:16.5px; color:var(--ink-soft); margin-top:6px}
+.diya-ic{display:inline-block; width:24px; height:24px} .diya-ic svg{width:100%; height:100%; overflow:visible}
+.hosts{font-family:'Cinzel',serif; font-weight:700; font-size:clamp(15px,4.4vw,18px); letter-spacing:.04em; line-height:1.35; color:var(--ink)}
+.inv-text{font-style:italic; font-size:17px; line-height:1.4; color:var(--ink-soft); margin-top:4px}
+.inv-text.small{font-size:16px; margin-top:2px}
+.inv-name{font-family:'Great Vibes',cursive; font-size:clamp(46px,13vw,58px); line-height:1.05; color:var(--deep)}
+.inv-with{font-style:italic; font-size:16px; color:var(--gold); margin:-4px 0}
+.from{font-family:'Cinzel',serif; font-weight:700; font-size:13px; letter-spacing:.28em; text-transform:uppercase; color:var(--deep); margin-top:12px}
+.from span{color:var(--gold); font-size:10px; vertical-align:2px; letter-spacing:0}
+
 /* ---------- event screens ---------- */
 .ev{padding:54px 20px 40px}
 .ev-local{font-size:clamp(22px,6.4vw,28px); color:var(--head); line-height:1.3; margin-bottom:16px}
@@ -191,7 +206,21 @@ body{
 .diyas svg{width:26px; height:26px; overflow:visible}
 .flame{transform-box:fill-box; transform-origin:50% 100%; animation:flicker .5s ease-in-out infinite alternate}
 
+
+.ev-line{font-style:italic; font-weight:600; font-size:19px; line-height:1.35; max-width:300px; margin:2px auto 0; color:var(--dv)}
+.ev .couple{height:clamp(170px,33vh,300px)}
+@supports (height:1svh){ .ev .couple{height:clamp(170px,33svh,300px)} }
+.ev .w-day{width:96px; height:96px} .ev .w-day b{font-size:37px}
+.ev .w-time{font-size:25px; margin-top:14px}
+.ev .ev-div,.ev .zari{margin:16px auto 10px}
+.ev-graha .ev-line{text-shadow:0 0 6px #FFF8E6, 0 0 12px #FFF8E6}
+.ev-sangeet .ev-line{text-shadow:0 0 10px rgba(255,138,216,.45)}
+
 /* ---------- closing screens ---------- */
+.welcome{margin-top:12px}
+.welcome .kicker{margin-bottom:6px}
+.w-names{white-space:nowrap; font-family:'Great Vibes',cursive; font-weight:400; font-size:clamp(30px,8.6vw,38px); letter-spacing:.04em; color:var(--deep); line-height:1.5}
+.w-all{font-style:italic; font-size:16.5px; color:var(--ink-soft)}
 .closing{background:radial-gradient(ellipse at 50% 35%, #FFEFF0 0%, var(--cream) 62%); --accent:#C2416C}
 .big-script{font-family:'Great Vibes',cursive; font-weight:400; font-size:clamp(42px,12vw,56px); line-height:1.05; color:var(--deep)}
 .lead{font-size:17px; line-height:1.5; color:var(--ink-soft); max-width:330px; margin-top:4px}
@@ -209,7 +238,7 @@ body{
 .venue-emblem{width:104px; height:104px; position:relative; margin:-6px 0 34px}
 .venue-emblem .halo{position:absolute; inset:-14%; opacity:.6}
 .venue-emblem svg.pin{position:relative; width:100%; height:100%; animation:float 4s ease-in-out infinite}
-.venue-name{font-family:'Cinzel',serif; font-weight:700; font-size:clamp(24px,7vw,30px); letter-spacing:.06em; color:var(--deep); margin-top:2px}
+.venue-name{font-family:'Cinzel',serif; font-weight:700; font-size:clamp(21px,6vw,26px); line-height:1.2; letter-spacing:.06em; color:var(--deep); margin-top:2px}
 .venue-addr{font-size:16.5px; line-height:1.4; color:var(--ink-soft); margin-top:4px}
 .sched{list-style:none; margin-top:8px; width:100%; max-width:320px; position:relative; text-align:left}
 .sched::before{content:""; position:absolute; left:74px; top:22px; bottom:22px; width:2px; background:linear-gradient(var(--gold-2),var(--gold),var(--gold-2))}
@@ -249,7 +278,10 @@ body{
   .w-day{width:76px; height:76px} .w-day b{font-size:29px}
   .w-time{font-size:20px; margin-top:8px}
   .ev-div,.zari{margin:8px auto 5px}
-  .d-v{font-size:16.5px}
+  .ev-line{font-size:16.5px}
+  .ev .w-day{width:80px; height:80px} .ev .w-day b{font-size:30px}
+  .ev .w-time{font-size:21px; margin-top:8px}
+  .ev .ev-div,.ev .zari{margin:10px auto 6px}
   .shloka{display:none}
 }
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -333,13 +365,15 @@ body{
       <p class="kicker reveal" style="--d:2">Shree Ganeshay Namah</p>
       <p class="shloka deva reveal" style="--d:3">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
       <div class="divider reveal" style="--d:4" data-divider></div>
-      <p class="invite-line reveal" style="--d:5">With the blessings of Lord Ganesha &amp; our elders,<br>we invite you to celebrate the wedding of</p>
+      <p class="invite-line reveal" style="--d:5">With the blessings of Lord Ganesha,<br><b>Vishnu Parekh &amp; Family</b> invite you to celebrate the wedding of</p>
       <h1 class="names reveal" style="--d:6">Siddhant <span>&amp;</span> Mitali</h1>
-      <p class="date-line reveal" style="--d:7">27 – 28 December 2026 · Vardhman Lawns, Pune</p>
+      <p class="date-line reveal" style="--d:7">27 – 28 December 2026 · Pune</p>
       <div class="couple sm reveal" style="--d:8" data-couple="opener" data-pose="namaste"></div>
     </div>
     <div class="scroll-hint" id="hint"><span>SCROLL</span><svg><use href="#i-down"/></svg></div>
   </section>
+
+
 
   <!-- ================= HALDI ================= -->
   <section class="screen ev ev-haldi" data-petals="marigold" data-label="Haldi">
@@ -361,11 +395,7 @@ body{
       </div>
       <p class="w-time reveal" style="--d:5"><i class="orn"></i><span>3:30 PM<small>onwards</small></span><i class="orn"></i></p>
       <div class="ev-div reveal" style="--d:6" data-garland></div>
-      <div class="dress reveal" style="--d:7">
-        <p class="d-k">Dress Code</p>
-        <p class="d-v">Pastel kurtas, kaftans, co-ords &amp; dresses</p>
-        <div class="d-dots"><i style="background:#F9D5E5"></i><i style="background:#C9E4DE"></i><i style="background:#D7C9F2"></i><i style="background:#FFE5B4"></i><i style="background:#C6DEF1"></i></div>
-      </div>
+      <p class="ev-line reveal" style="--d:7">Come, shower the couple with turmeric, marigolds &amp; laughter</p>
     </div>
   </section>
 
@@ -391,11 +421,7 @@ body{
       </div>
       <p class="w-time reveal" style="--d:5"><i class="orn"></i><span>7:00 PM<small>onwards</small></span><i class="orn"></i></p>
       <div class="ev-div reveal" style="--d:6" data-stardiv></div>
-      <div class="dress reveal" style="--d:7">
-        <p class="d-k">Dress Code</p>
-        <p class="d-v">Glam shirts, blazers, indo-westerns, lehengas, designer sarees, shararas &amp; all things sparkle</p>
-        <div class="d-dots"><i style="background:#E5C76B;color:#E5C76B"></i><i style="background:#D9DCE8;color:#D9DCE8"></i><i style="background:#C2185B;color:#C2185B"></i><i style="background:#7B1FA2;color:#B06BE0"></i><i style="background:#101010;color:#8888AA"></i></div>
-      </div>
+      <p class="ev-line reveal" style="--d:7">Bring your dancing shoes for a night of music &amp; celebration</p>
     </div>
   </section>
 
@@ -421,11 +447,7 @@ body{
       </div>
       <p class="w-time reveal" style="--d:5"><i class="orn"></i><span>6:15 AM<small>auspicious morning pooja</small></span><i class="orn"></i></p>
       <span class="zari reveal" style="--d:6"></span>
-      <div class="dress reveal" style="--d:7">
-        <p class="d-k">Dress Code</p>
-        <p class="d-v">Shirts, kurtas, dhotis, sarees, lehengas &amp; anarkalis</p>
-        <div class="d-dots"><i style="background:#1F7A4D"></i><i style="background:#8E1B3A"></i><i style="background:#E0A82E"></i><i style="background:#FFF6DE"></i></div>
-      </div>
+      <p class="ev-line reveal" style="--d:7">Join us in prayer as we seek blessings for the couple</p>
     </div>
   </section>
 
@@ -447,11 +469,7 @@ body{
       </div>
       <p class="w-time reveal" style="--d:5"><i class="orn"></i><span>11:20 AM<small>Shubh Muhurat</small></span><i class="orn"></i></p>
       <div class="ev-div reveal" style="--d:6" data-golddiv></div>
-      <div class="dress reveal" style="--d:7">
-        <p class="d-k">Dress Code</p>
-        <p class="d-v">Jodhpuris, kurtas, bandhgalas, sarees, lehengas &amp; anarkalis</p>
-        <div class="d-dots"><i style="background:#C8102E"></i><i style="background:#E8B84A"></i><i style="background:#FFF4DC"></i><i style="background:#0F5C44"></i><i style="background:#F4A3B4"></i></div>
-      </div>
+      <p class="ev-line reveal" style="--d:7">as Siddhant &amp; Mitali take the seven sacred pheras</p>
     </div>
   </section>
 
@@ -461,20 +479,24 @@ body{
     <div class="corner bl"><svg><use href="#i-corner"/></svg></div>
     <div class="corner br"><svg><use href="#i-corner"/></svg></div>
     <div class="inner">
-      <p class="kicker reveal"><span class="deva">स्वागतोत्सुक</span> · With Love</p>
+      <p class="kicker reveal">With Love</p>
       <h2 class="big-script reveal" style="--d:1">Your presence is our blessing</h2>
       <div class="divider reveal" style="--d:2" data-divider></div>
-      <p class="lead reveal" style="--d:3">We would be deeply honoured to have you with us as our families come together. Your presence &amp; blessings will make our celebrations complete.</p>
+      <p class="lead reveal" style="--d:3">We would be deeply honoured to have you with us as we welcome Mitali into our family. Your presence &amp; blessings will make our celebrations complete.</p>
       <div class="families reveal" style="--d:4">
-        <div class="fam"><small>The Groom</small><b>Siddhant</b><span>Son of<br>Mrs. Vrushali &amp;<br>Mr. Vishnu Parekh</span></div>
+        <div class="fam"><small>The Groom</small><b>Siddhant</b><span>Son of<br>Smt. Vrushali &amp;<br>Shri Vishnu Parekh</span></div>
         <div class="sep"></div>
-        <div class="fam"><small>The Bride</small><b>Mitali</b><span>Daughter of<br>Mrs. Poonam &amp;<br>Mr. Sunil Gujar</span></div>
+        <div class="fam"><small>The Bride</small><b>Mitali</b><span>Daughter of<br>Smt. Poonam &amp;<br>Shri Sunil Gujar</span></div>
       </div>
-      <div class="couple sm reveal" style="--d:5;margin-top:10px" data-couple="closing" data-pose="namaste"></div>
-      <div class="countdown reveal" style="--d:6">
+      <div class="welcome reveal" style="--d:5">
+        <p class="kicker"><span class="deva">स्वागतोत्सुक</span> · Eagerly awaiting you</p>
+        <p class="w-names">Vishnu Parekh &amp; Family</p>
+      </div>
+      <div class="couple sm reveal" style="--d:6;margin-top:8px" data-couple="closing" data-pose="namaste"></div>
+      <div class="countdown reveal" style="--d:7">
         <div><b data-cd="d">00</b><small>DAYS</small></div><div><b data-cd="h">00</b><small>HRS</small></div><div><b data-cd="m">00</b><small>MIN</small></div><div><b data-cd="s">00</b><small>SEC</small></div>
       </div>
-      <p class="kicker reveal" style="--d:7;margin-top:8px">until the Shubh Muhurat</p>
+      <p class="kicker reveal" style="--d:8;margin-top:8px">until the Shubh Muhurat</p>
     </div>
   </section>
 
@@ -494,8 +516,8 @@ body{
         </svg>
       </div>
       <p class="kicker reveal" style="--d:1">The Venue · <span class="deva">कार्यस्थळ</span></p>
-      <h2 class="venue-name reveal" style="--d:2">Vardhman Lawns</h2>
-      <p class="venue-addr reveal" style="--d:2">Indrayani Randive Road, Shivraj Nagar,<br>Bibwewadi, Pune, Maharashtra 411037</p>
+      <h2 class="venue-name reveal" style="--d:2">Vardhaman Sanskrutik Bhavan</h2>
+      <p class="venue-addr reveal" style="--d:2">Shivraj Nagar, Bibwewadi,<br>Pune, Maharashtra 411037</p>
       <div class="divider reveal" style="--d:3" data-divider></div>
       <ul class="sched reveal" style="--d:4">
         <li><span class="dt">Sun<br>27 Dec</span><i class="dot" style="background:#F6C343"></i><span class="ev-t">Haldi<small>3:30 PM</small></span></li>
@@ -507,7 +529,7 @@ body{
         <a class="btn" id="mapBtn" target="_blank" rel="noopener"><svg><use href="#i-map"/></svg>Directions</a>
         <button class="btn ghost" id="shareBtn" type="button"><svg><use href="#i-share"/></svg>Share</button>
       </div>
-      <p class="signoff reveal" style="--d:6">With love &amp; best compliments from<br>the Parekh &amp; Gujar families
+      <p class="signoff reveal" style="--d:6">With love &amp; warm regards,<br>Vishnu Parekh &amp; Family
         <span class="hash">#SiddhantWedsMitali</span></p>
     </div>
   </section>
@@ -518,7 +540,7 @@ body{
 
 <script>
 /* =================== SETTINGS =================== */
-const VENUE_LINK = "https://maps.app.goo.gl/UguApHkP2f83Cfnv9";
+const VENUE_LINK = "https://maps.app.goo.gl/JzguZz78ATAHfeUD6";
 const WEDDING_AT = "2026-12-28T11:20:00+05:30";
 const COUPLE     = "Siddhant & Mitali";
 /* ================================================ */
@@ -964,6 +986,7 @@ $$('[data-kolam]').forEach(el => el.innerHTML = flowerKolam());
 $$('[data-lights]').forEach(el => el.innerHTML = lightsSVG());
 $$('[data-mandap]').forEach(el => el.innerHTML = mandapSVG());
 $$('[data-diyas]').forEach(el => { let s=''; for (let i=0;i<+el.dataset.diyas;i++) s += diyaSVG(i); el.innerHTML = s; });
+$$('[data-diya1]').forEach((el,i) => el.innerHTML = diyaSVG(i));
 $$('[data-couple]').forEach(el => el.innerHTML = coupleSVG(el.dataset.couple, el.dataset.pose || 'wave'));
 
 $$('[data-stars]').forEach(sec => {
@@ -998,7 +1021,7 @@ $$('[data-petals]').forEach(sec => {
 /* ---------------- venue & share ---------------- */
 $('#mapBtn').href = VENUE_LINK;
 $('#shareBtn').addEventListener('click', async () => {
-  const data = {title:`${COUPLE} · Wedding Invitation`, text:`You're invited to the wedding celebrations of ${COUPLE}! 27–28 December 2026 · Vardhman Lawns, Bibwewadi, Pune`, url:location.href};
+  const data = {title:`${COUPLE} · Wedding Invitation`, text:`You're invited to the wedding celebrations of ${COUPLE}! 27–28 December 2026 · Vardhaman Sanskrutik Bhavan, Bibwewadi, Pune`, url:location.href};
   if (navigator.share){ try { await navigator.share(data); } catch(e){} }
   else window.open(`https://wa.me/?text=${encodeURIComponent(data.text + ' ' + data.url)}`, '_blank');
 });
